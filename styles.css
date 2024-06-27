@@ -1,0 +1,321 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+}
+
+#game-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 10px 0;
+}
+
+#game-board {
+    display: grid;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+    border: dashed 4px solid s;
+}
+
+#next-level {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#next-level:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #fff;
+    color: #000;
+}
+
+.card-back {
+    background-color: #007bff;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+#welcome-container {
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.flip-card {
+    border: 2px solid grey;
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    box-shadow: 0 10px 110px rgba(0, 0, 0, 0.2);
+    color: red;
+    font-size: medium;
+    font-weight: 100;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    position: relative;
+    perspective: 1000px;
+    background-color: transparent;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #fbff00c7;
+    color: rgb(227, 1, 1);
+}
+
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    font-size: large;
+    transform: rotateY(180deg);
+}
+
+.text {
+    color: red;
+    margin: 0;
+}
+
+.game-end-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    z-index: 1000;
+}
+
+#logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#logo {
+    width: 150px;
+    /*Adjust size as needed*/
+    height: auto;
+    border: 5px salmon solid;
+    border-radius: 50%;
+}
+
+#ht {
+    color: darkcyan;
+}
+
+/*Media Queries for responsiveness*/
+@media only screen and (max-width: 768px) {
+
+    /*Add responsive styles here*/
+    body {
+        font-size: 14px;
+        /*Adjust other styles as needed*/
+    }
+
+
+
+
+    #game-container {
+        margin-top: 10px;
+    }
+
+
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+
+
+
+    body {
+        font-size: 12px;
+        /*Adjust other styles as needed*/
+    }
+
+
+
+
+
+    #game-container {
+        margin-top: 5px;
+    }
+
+
+
+
+
+    .card {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+
+/*Your existing CSS code here*/
+
+/*Media Queries for responsiveness*/
+@media only screen and (max-width: 1200px) {
+    /
+
+*Adjust styles for devices up to 1200px in width*
+
+/
+    /
+
+*Example of decreasing width for certain elements*
+
+/
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    /
+
+*Adjust styles for devices up to 992px in width*
+
+/
+    /
+
+*Example of decreasing width for certain elements*
+
+/
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /
+
+*Adjust styles for devices up to 768px in width*
+
+/
+    /
+
+*Example of decreasing width for certain elements*
+
+/
+    .card {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .card {
+        width: 40px;
+        height: 40px;
+        font-size: 10px;
+    }
+}
+
+/
+
